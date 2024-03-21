@@ -1,0 +1,267 @@
+:root {
+	/* NEUTRAL COLORS */
+	--white: hsl(0 0% 100%);
+	--pale-blue: hsl(221 100% 96%);
+	--light-lavender: hsl(241 100% 89%);
+	--dark-gray-blue: hsl(224 30% 27%);
+
+	/* COLORS */
+	--light-red: hsl(0 100% 67%);
+	--orangey-yellow: hsl(39 100% 56%);
+	--green-teal: hsl(166 100% 37%);
+	--cobalt-blue: hsl(234 85% 45%);
+
+	/* GRADIENTS */
+	--light-slate-blue: linear-gradient(hsl(252 100% 67%), hsl(241 81% 54%));
+
+	--violet-blue: linear-gradient(hsla(256 72% 46% / 1), hsla(241 72% 46% / 0));
+
+	/* FONTS */
+	--heading-xl: 4.5rem;
+	--heading-l: 2rem;
+	--heading-m: 1.5rem;
+	--body: 1.125rem;
+}
+/* CSS RESET */
+/*
+  1. Margin, padding and box-sizing model reset.
+*/
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+	margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	overflow-wrap: break-word;
+	line-height: 1.1;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+	isolation: isolate;
+}
+
+/* GENERAL STYLES */
+body {
+	font-family: "Hanken Grotesk", sans-serif;
+	font-size: 18px;
+	background: var(--pale-blue);
+	min-height: 100dvh;
+	color: var(--white);
+}
+.card {
+	background: var(--white);
+}
+/* RESULT STYLES */
+.result {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1em 0 2em;
+	background: var(--light-slate-blue);
+	border-radius: 0 0 2em 2em;
+}
+.result__title {
+	color: var(--light-lavender);
+	margin-bottom: 1.5em;
+	font-size: 1em;
+}
+.result__score {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: var(--violet-blue);
+	height: 140px;
+	width: 140px;
+	border-radius: 50%;
+	margin-bottom: 2em;
+}
+.result__score p:first-child {
+	font-size: 3.5rem;
+	font-weight: 900;
+	margin-bottom: 0.25em;
+}
+.result__score p:last-child {
+	color: var(--light-lavender);
+	font-weight: 700;
+	font-size: 1rem;
+}
+.result__summary {
+	text-align: center;
+	max-width: 16em;
+	font-size: 1rem;
+}
+.result__summary h3 {
+	font-size: var(--heading-m);
+	font-weight: 700;
+	margin-bottom: 0.5em;
+}
+.result__summary p {
+	color: var(--light-lavender);
+}
+/* SUMMARY STYLES */
+.summary {
+	padding: 1.813em 2em;
+}
+.summary__title {
+	font-size: 18px;
+	color: var(--dark-gray-blue);
+	margin-bottom: 1em;
+}
+.summary__grid {
+	display: grid;
+	gap: 1em;
+}
+.summary__grid li {
+	border-radius: 0.5em;
+	padding: 1em;
+}
+.summary__item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.summary__type {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+	font-size: 0.9em;
+}
+.summary__score {
+	color: var(--dark-gray-blue);
+	font-weight: 600;
+}
+.summary__total {
+	color: hsl(224 30% 27% / 0.5);
+	font-weight: 700;
+}
+.reaction {
+	background: hsl(0 100% 67% / 0.1);
+	color: var(--light-red);
+}
+.memory {
+	background: hsl(39 100% 56% / 0.1);
+	color: var(--orangey-yellow);
+}
+.verbal {
+	background: hsl(166 100% 37% / 0.1);
+	color: var(--green-teal);
+}
+.visual {
+	background: hsl(234 85% 45% / 0.1);
+	color: var(--cobalt-blue);
+}
+.summary__button {
+	display: inline;
+	text-align: center;
+	text-decoration: none;
+	color: var(--white);
+	cursor: pointer;
+	font-weight: 700;
+	background: var(--dark-gray-blue);
+	padding: 0.75em 2em;
+	border-radius: 50vw;
+}
+.summary__button:hover {
+	background: var(--light-slate-blue);
+}
+@media (min-width: 768px) {
+	/* GENERAL STYLES */
+	body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.card {
+		display: flex;
+		border-radius: 2em;
+	}
+	/* RESULTS */
+	.result {
+		justify-content: flex-start;
+		padding: 1.813em 2.5em;
+		border-radius: 2em;
+	}
+	.result__title {
+		font-size: var(--heading-m);
+		padding: 0;
+	}
+	.result__score {
+		width: 200px;
+		height: 200px;
+		margin-bottom: 1em;
+	}
+	.result__score p:first-child {
+		font-size: var(--heading-xl);
+	}
+	.result__score p:last-child {
+		font-size: var(--body);
+	}
+	.result__summary h3 {
+		font-size: var(--heading-l);
+	}
+	.result__summary p {
+		font-size: var(--body);
+	}
+	/* SUMMARY */
+	.summary {
+		padding: 1.813em 2.5em;
+		width: 368px;
+	}
+	.summary__title {
+		font-size: var(--heading-m);
+	}
+	.summary p {
+		font-size: var(--body);
+	}
+}
